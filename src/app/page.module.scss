@@ -1,6 +1,216 @@
-.header {
-  span {
-    font-size: 40px;
-    color: violet;
+.header-content {
+  padding-top: 48px;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--secondary);
+  @media screen and (min-width: 768px) {
+    display: flex;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    font-size: 56px;
+    br {
+      display: none;
+    }
+    span:not(:last-child)::after {
+      content: '\00a0';
+    }
+  }
+}
+
+.main-content {
+  @media screen and (min-width: 768px) {
+    height: 70%;
+    padding: 24px 0;
+  }
+}
+
+.description {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--secondary);
+  @media screen and (min-width: 768px) {
+    margin-top: 0;
+    height: 40px;
+    font-size: 32px;
+  }
+}
+
+.form-content {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    height: calc(100% - 40px);
+  }
+}
+
+.content {
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    display: flex;
+    height: calc(100% - 80px);
+  }
+}
+
+.spreadsheet {
+  margin: 0 4px;
+  width: calc(100% - 8px);
+  height: 240px;
+  border: 1px dashed violet;
+  @media screen and (min-width: 768px) {
+    order: 1;
+    margin: 0;
+    width: 65%;
+    height: 100%;
+    flex-shrink: 0;
+  }
+}
+
+.divider-spreadsheet {
+  margin: 56px 32px 48px;
+  border-top: 1px dashed var(--secondary);
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.divider-variable {
+  margin: 48px 32px;
+  border-top: 1px dashed var(--secondary);
+  @media screen and (min-width: 480px) {
+    display: none;
+  }
+}
+
+.sticky-button-placeholder {
+  position: relative;
+  height: 80px;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.sticky-button-container {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  width: calc(100% - 32px);
+  z-index: 99;
+  @media screen and (min-width: 768px) {
+    order: 3;
+    position: static;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.sticky-button-more {
+  width: 100%;
+  margin-bottom: 4px;
+  background-color: rgba(var(--primary-1-rgb), 0.7);
+  color: var(--spreadsheet);
+  font-size: 16px;
+  text-shadow: var(--text-shadow-1);
+  box-shadow: var(--box-shadow-3);
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.sticky-button-analysis {
+  width: 100%;
+  height: 48px;
+  background-color: var(--secondary);
+  box-shadow: var(--box-shadow-3);
+  color: var(--primary-1);
+  font-size: 24px;
+  font-weight: 700;
+  text-shadow: var(--text-shadow-1);
+  @media screen and (min-width: 768px) {
+    width: 65%;
+    height: 56px;
+    font-size: 32px;
+  }
+}
+
+.variable {
+  position: relative;
+  margin-bottom: 20px;
+  text-align: center;
+  & > div {
+    color: var(--secondary);
+    margin-bottom: 32px;
+    text-decoration-line: underline;
+    font-weight: 700;
+    font-size: 28px;
+  }
+  & > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    font-size: 20px;
+
+    & > li {
+      color: var(--spreadsheet);
+    }
+  }
+  @media screen and (min-width: 480px) {
+    display: inline-block;
+    width: 50%;
+  }
+  @media screen and (min-width: 768px) {
+    width: 17.5%;
+    flex-shrink: 0;
+    & > div {
+      height: 40px;
+    }
+    & > ul {
+      height: calc(100% - 32px - 40px);
+      overflow-y: scroll;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      & > li:last-child {
+        padding-bottom: 32px;
+      }
+    }
+  }
+}
+.variable-more {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
+    background-color: rgba(var(--primary-1-rgb), 0.7);
+    color: var(--spreadsheet);
+    font-size: 16px;
+    text-shadow: var(--text-shadow-1);
+    z-index: 50;
+    border-radius: 4px;
+    box-shadow: var(--box-shadow-3);
+  }
+}
+
+.variable-comparison {
+  @media screen and (min-width: 768px) {
+    order: 0;
+  }
+}
+
+.variable-measurement {
+  @media screen and (min-width: 768px) {
+    order: 2;
   }
 }
