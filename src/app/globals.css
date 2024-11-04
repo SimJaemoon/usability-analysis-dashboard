@@ -1,8 +1,41 @@
 @import './reset.css';
 
 :root {
+  /* color */
+  --primary-1: #3f8e83;
+  --primary-1-rgb: 63, 142, 131;
+  --primary-2: #2f4858;
+  --secondary: #f6f7c4;
+  --spreadsheet: #dff2ee;
   --background: #ffffff;
-  --foreground: #171717;
+  --on-background: #000000;
+  --disabled: #b2b2b2;
+  --on-disabled: #fbfbfb;
+  /* shadow - box */
+  --box-shadow-1: 0px 1px 2px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --box-shadow-2: 0px 1px 2px rgba(0, 0, 0, 0.3),
+    0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  --box-shadow-3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15),
+    0px 1px 3px rgba(0, 0, 0, 0.3);
+  --box-shadow-4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
+    0px 2px 3px rgba(0, 0, 0, 0.3);
+  --box-shadow-5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15),
+    0px 4px 4px rgba(0, 0, 0, 0.3);
+  /* shadow - drop */
+  --drop-shadow-3: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  --drop-shadow-5: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  /* shadow - text */
+  --text-shadow-1: 0px 1px 2px rgba(0, 0, 0, 0.3),
+    0px 1px 3px rgba(0, 0, 0, 0.15);
+  --text-shadow-2: 0px 1px 2px rgba(0, 0, 0, 0.3),
+    0px 2px 6px rgba(0, 0, 0, 0.15);
+  --text-shadow-3: 0px 4px 8px rgba(0, 0, 0, 0.15),
+    0px 1px 3px rgba(0, 0, 0, 0.3);
+  --text-shadow-4: 0px 6px 10px rgba(0, 0, 0, 0.15),
+    0px 2px 3px rgba(0, 0, 0, 0.3);
+  --text-shadow-5: 0px 8px 12px rgba(0, 0, 0, 0.15),
+    0px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 @media (prefers-color-scheme: dark) {
