@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './reset.css';
 import './globals.css';
+import StoreProvider from '@/lib/StoreProvider';
 
 const freesentation = localFont({
   src: './fonts/FreesentationVF.ttf',
@@ -21,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${freesentation.variable}`}>{children}</body>
+      <StoreProvider>
+        <body className={`${freesentation.variable}`}>{children}</body>
+      </StoreProvider>
     </html>
   );
 }
