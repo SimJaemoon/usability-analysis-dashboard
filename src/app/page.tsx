@@ -1,5 +1,6 @@
 import styles from './page.module.scss';
 import Spreadsheet from '@/components/Spreadsheet';
+import VariableList from '@/components/VariableList';
 
 export default function Home() {
   return (
@@ -25,28 +26,14 @@ export default function Home() {
               className={`${styles.variable} ${styles['variable-comparison']}`}
             >
               <div>비교 대상</div>
-              <ul>
-                {Array.from({ length: 5 }, (_, i) => (
-                  <li key={i}>
-                    <button>{'item ' + i}</button>
-                  </li>
-                ))}
-              </ul>
-              <button className={styles['variable-more']}>▼</button>
+              <VariableList />
             </div>
             <div className={styles['divider-variable']} />
             <div
               className={`${styles.variable} ${styles['variable-measurement']}`}
             >
               <div>측정 지표</div>
-              <ul>
-                {Array.from({ length: 5 }, (_, i) => (
-                  <li key={i}>
-                    <button>{'item ' + i}</button>
-                  </li>
-                ))}
-              </ul>
-              <button className={styles['variable-more']}>▼</button>
+              <VariableList />
             </div>
           </div>
           <div className={styles['sticky-button-placeholder']}></div>
