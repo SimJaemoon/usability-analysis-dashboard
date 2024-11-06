@@ -16,7 +16,7 @@ export default function Home() {
         <div className={styles.description}>
           데이터를 복사해 붙여넣어 주세요
         </div>
-        <form className={styles['form-content']}>
+        <div className={styles['form-content']}>
           <div className={styles.content}>
             <div className={styles.spreadsheet}>
               <Spreadsheet />
@@ -43,7 +43,7 @@ export default function Home() {
               분석하기
             </button>
           </div>
-        </form>
+        </div>
       </main>
       <footer></footer>
     </>
