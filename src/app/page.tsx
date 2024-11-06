@@ -1,4 +1,5 @@
 import styles from './page.module.scss';
+import Spreadsheet from '@/components/Spreadsheet';
 
 export default function Home() {
   return (
@@ -16,7 +17,9 @@ export default function Home() {
         </div>
         <form className={styles['form-content']}>
           <div className={styles.content}>
-            <div className={styles.spreadsheet} />
+            <div className={styles.spreadsheet}>
+              <Spreadsheet />
+            </div>
             <div className={styles['divider-spreadsheet']} />
             <div
               className={`${styles.variable} ${styles['variable-comparison']}`}

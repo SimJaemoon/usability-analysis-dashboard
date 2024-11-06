@@ -60,7 +60,7 @@
   margin: 0 4px;
   width: calc(100% - 8px);
   height: 240px;
-  border: 1px dashed violet;
+  border: 1px dashed var(--spreadsheet);
   @media screen and (min-width: 768px) {
     order: 1;
     margin: 0;

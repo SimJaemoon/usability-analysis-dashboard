@@ -1,0 +1,11 @@
+.spreadsheet {
+  tbody tr {
+    text-align: center;
+    td {
+      background-color: var(--spreadsheet);
+    }
+    &:first-child td {
+      background-color: var(--secondary);
+    }
+  }
+}
