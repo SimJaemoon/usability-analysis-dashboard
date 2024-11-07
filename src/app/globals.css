@@ -40,6 +40,10 @@ html {
   background-color: var(--primary-2);
   min-width: 360px;
 }
+.html-background-blackboard {
+  background-color: var(--primary-1);
+  transition: background-color 1s;
+}
 
 body {
   font-family: var(--font-freesentation), sans-serif;
