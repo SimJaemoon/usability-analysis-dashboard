@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import './reset.css';
 import './globals.css';
 import StoreProvider from '@/lib/StoreProvider';
+import { Suspense } from 'react';
 
 const freesentation = localFont({
   src: './fonts/FreesentationVF.ttf',
@@ -23,7 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <StoreProvider>
-        <body className={`${freesentation.variable}`}>{children}</body>
+        <Suspense>
+          <body className={`${freesentation.variable}`}>{children}</body>
+        </Suspense>
       </StoreProvider>
     </html>
   );
