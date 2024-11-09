@@ -134,11 +134,11 @@
     width: 65%;
     height: 56px;
     font-size: 32px;
+    transition-duration: 0.3s;
+    transition-property: color, background-color;
     &:hover {
       background-color: var(--primary-1);
       color: var(--secondary);
-      transition-duration: 0.3s;
-      transition-property: color, background-color;
     }
   }
 }
