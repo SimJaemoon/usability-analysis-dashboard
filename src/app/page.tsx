@@ -97,14 +97,14 @@ export default function Landing() {
                   className={`${styles.variable} ${styles['variable-comparison']}`}
                 >
                   <div>비교 대상</div>
-                  <VariableList />
+                  <VariableList variableType="comparison" />
                 </div>
                 <div className={styles['divider-variable']} />
                 <div
                   className={`${styles.variable} ${styles['variable-measurement']}`}
                 >
                   <div>측정 지표</div>
-                  <VariableList />
+                  <VariableList variableType="measurement" />
                 </div>
               </div>
               <div className={styles['sticky-button-placeholder']}></div>

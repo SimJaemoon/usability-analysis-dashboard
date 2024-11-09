@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import spreadsheetReducer from './features/spreadsheet/spreadsheetSlice';
+import variableListReducer from './features/spreadsheet/variableListSlice';
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
       spreadsheet: spreadsheetReducer,
+      variableList: variableListReducer,
     },
   });
 };

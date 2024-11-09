@@ -1,23 +1,35 @@
 'use client';
 
 import styles from './index.module.scss';
-import { useState } from 'react';
-import { useAppSelector } from '@/lib/hooks';
+import { useAppSelector, useAppDispatch } from '@/lib/hooks';
 import { selectData } from '@/lib/features/spreadsheet/spreadsheetSlice';
+import {
+  selectComparison,
+  selectMeasurement,
+  toggleComparison,
+  toggleMeasurement,
+} from '@/lib/features/spreadsheet/variableListSlice';
 
-export default function VariableList() {
-  const [selectedVarables, setSelectedVarables] = useState<number[]>([]);
+export default function VariableList({
+  variableType,
+}: {
+  variableType: 'comparison' | 'measurement';
+}) {
+  const dispatch = useAppDispatch();
   const data = useAppSelector(selectData);
+  const selectedVarables = useAppSelector(
+    variableType === 'comparison' ? selectComparison : selectMeasurement,
+  );
   const variables = data[0].filter(
     (v) => !['(예시)', null].includes(v),
   ) as string[];
 
   const onVariableButtonClick = (variableIndex: number) => () => {
-    setSelectedVarables((prev) => {
-      if (prev.includes(variableIndex))
-        return prev.filter((v) => v !== variableIndex);
-      return [...prev, variableIndex];
-    });
+    dispatch(
+      variableType === 'comparison'
+        ? toggleComparison(variableIndex)
+        : toggleMeasurement(variableIndex),
+    );
   };
 
   return (
