@@ -15,12 +15,12 @@ export const variableListSlice = createSlice({
   name: 'variableList',
   initialState,
   reducers: {
-    toggleComparison: (state, action: PayloadAction<number>) => {
+    toggleComparisonVariableIndex: (state, action: PayloadAction<number>) => {
       state.comparison = state.comparison.includes(action.payload)
         ? state.comparison.filter((v) => v !== action.payload)
         : [...state.comparison, action.payload];
     },
-    toggleMeasurement: (state, action: PayloadAction<number>) => {
+    toggleMeasurementVariableIndex: (state, action: PayloadAction<number>) => {
       state.measurement = state.measurement.includes(action.payload)
         ? state.measurement.filter((v) => v !== action.payload)
         : [...state.measurement, action.payload];
@@ -28,12 +28,12 @@ export const variableListSlice = createSlice({
   },
 });
 
-export const { toggleComparison, toggleMeasurement } =
+export const { toggleComparisonVariableIndex, toggleMeasurementVariableIndex } =
   variableListSlice.actions;
 
-export const selectComparison = (state: RootState) =>
+export const selectComparisonVariableIndex = (state: RootState) =>
   state.variableList.comparison;
-export const selectMeasurement = (state: RootState) =>
+export const selectMeasurementVariableIndex = (state: RootState) =>
   state.variableList.measurement;
 
 export default variableListSlice.reducer;

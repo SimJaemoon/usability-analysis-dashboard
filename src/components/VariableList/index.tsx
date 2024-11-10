@@ -4,10 +4,10 @@ import styles from './index.module.scss';
 import { useAppSelector, useAppDispatch } from '@/lib/hooks';
 import { selectData } from '@/lib/features/spreadsheet/spreadsheetSlice';
 import {
-  selectComparison,
-  selectMeasurement,
-  toggleComparison,
-  toggleMeasurement,
+  selectComparisonVariableIndex,
+  selectMeasurementVariableIndex,
+  toggleComparisonVariableIndex,
+  toggleMeasurementVariableIndex,
 } from '@/lib/features/spreadsheet/variableListSlice';
 
 export default function VariableList({
@@ -18,7 +18,9 @@ export default function VariableList({
   const dispatch = useAppDispatch();
   const data = useAppSelector(selectData);
   const selectedVarables = useAppSelector(
-    variableType === 'comparison' ? selectComparison : selectMeasurement,
+    variableType === 'comparison'
+      ? selectComparisonVariableIndex
+      : selectMeasurementVariableIndex,
   );
   const variables = data[0].filter(
     (v) => !['(예시)', null].includes(v),
@@ -27,8 +29,8 @@ export default function VariableList({
   const onVariableButtonClick = (variableIndex: number) => () => {
     dispatch(
       variableType === 'comparison'
-        ? toggleComparison(variableIndex)
-        : toggleMeasurement(variableIndex),
+        ? toggleComparisonVariableIndex(variableIndex)
+        : toggleMeasurementVariableIndex(variableIndex),
     );
   };
 
