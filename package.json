@@ -10,7 +10,11 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "@handsontable/react": "^14.6.1",
+    "@mui/icons-material": "^6.1.6",
+    "@mui/material": "^6.1.6",
     "@reduxjs/toolkit": "^2.3.0",
     "handsontable": "^14.6.1",
     "next": "15.0.2",
