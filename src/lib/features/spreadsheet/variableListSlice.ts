@@ -7,8 +7,8 @@ interface VariableListState {
 }
 
 const initialState: VariableListState = {
-  comparison: [],
-  measurement: [],
+  comparison: [0, 1],
+  measurement: [2],
 };
 
 export const variableListSlice = createSlice({
