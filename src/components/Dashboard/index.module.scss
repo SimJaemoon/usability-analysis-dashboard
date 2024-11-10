@@ -1,0 +1,290 @@
+.average-comparison-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  flex-shrink: 0;
+  width: 480px;
+  height: 400px;
+  padding: 16px;
+  background-color: var(--primary-2);
+  border: 1px solid var(--background);
+  box-shadow: var(--box-shadow-2);
+  & > div:nth-child(1) {
+    font-size: 24px;
+    color: var(--secondary);
+    font-weight: 700;
+    margin: 0 auto;
+  }
+  & > div:nth-child(2) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    color: var(--spreadsheet);
+    & > div {
+      font-size: 20px;
+
+      & > span {
+        color: var(--secondary);
+        font-weight: 700;
+      }
+    }
+  }
+  & > figure {
+    width: 100%;
+    flex-grow: 1;
+    & > div {
+      width: 100%;
+      height: 100%;
+      background-color: rgb(91, 152, 221);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    & > figcaption {
+      clip: rect(1px, 1px, 1px, 1px);
+      clip-path: inset(50%);
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+    }
+  }
+}
+
+.descriptive-statistic-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  flex-shrink: 0;
+  width: 320px;
+  height: 400px;
+  padding: 16px;
+  background-color: var(--primary-2);
+  border: 1px solid var(--background);
+  box-shadow: var(--box-shadow-2);
+  & > div:nth-child(1) {
+    font-size: 24px;
+    color: var(--secondary);
+    font-weight: 700;
+    margin: 0 auto;
+  }
+  & > div:nth-child(2) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    color: var(--spreadsheet);
+    & > div {
+      display: flex;
+      width: 100%;
+      column-gap: 5%;
+
+      & > div:nth-child(1) {
+        width: 40%;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: right;
+        line-height: 32px;
+      }
+      & > div:nth-child(2) {
+        width: 55%;
+        font-size: 16px;
+        text-align: left;
+        line-height: 32px;
+        & > span {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  & > figure {
+    width: 100%;
+    flex-grow: 1;
+    & > div {
+      width: 100%;
+      height: 100%;
+      background-color: rgb(91, 152, 221);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    & > figcaption {
+      clip: rect(1px, 1px, 1px, 1px);
+      clip-path: inset(50%);
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+    }
+  }
+}
+
+.folded {
+  height: 0 !important;
+}
+
+.analysis-carousel {
+  padding-bottom: 32px;
+  & > div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    column-gap: 12px;
+    color: var(--background);
+    font-size: 28px;
+    font-weight: 700;
+    & > button {
+      text-shadow: var(--text-shadow-3);
+    }
+    & > button:first-child {
+      color: var(--secondary);
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 20px;
+      column-gap: 8px;
+    }
+  }
+  & > div:nth-child(2) {
+    height: 400px;
+    display: flex;
+    column-gap: 20px;
+    padding: 0 2%;
+    overflow: hidden;
+    transition-property: height, border;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+}
+
+.main-content {
+  margin: 0 5%;
+  @media screen and (max-width: 768px) {
+    margin: 0;
+  }
+  & > article {
+    & > h3 {
+      margin-bottom: 16px;
+      font-size: 40px;
+      font-weight: 900;
+      color: var(--secondary);
+      & > button {
+        text-shadow: var(--text-shadow-3);
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 32px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.selected-variable {
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+.header-content {
+  position: relative;
+  display: flex;
+  height: 64px;
+  margin-bottom: 24px;
+  @media screen and (max-width: 768px) {
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap;
+    row-gap: 16px;
+  }
+  & > button {
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--background);
+    filter: drop-shadow(var(--drop-shadow-3));
+    @media screen and (max-width: 768px) {
+      position: absolute;
+      width: auto;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  & > div:nth-child(1),
+  & > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 16px;
+    width: 47.5%;
+
+    & > div:first-child {
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: underline;
+      color: var(--background);
+    }
+    & > div:last-child {
+      width: 70%;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      color: var(--background);
+      background-color: var(--primary-2);
+      border-radius: 8px;
+      overflow: hidden;
+      & > div {
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+        padding: 4px 16px;
+
+        & > button {
+          flex-shrink: 0;
+          &::after {
+            content: attr(data-content);
+            display: block;
+            font-weight: 700;
+            height: 0;
+            visibility: hidden;
+          }
+          @media screen and (min-width: 768px) {
+            &:hover {
+              color: var(--secondary);
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    & > div:nth-child(1),
+    & > div:nth-child(2) {
+      width: 100%;
+      height: max-content;
+      flex-wrap: wrap;
+      & > div {
+        width: 100%;
+      }
+      & > div:nth-child(1) {
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+      }
+      & > div:nth-child(2) {
+        width: 100%;
+        height: 36px;
+        justify-content: center;
+        & > div {
+          padding-left: 12px;
+          column-gap: 16px;
+        }
+      }
+    }
+  }
+}
