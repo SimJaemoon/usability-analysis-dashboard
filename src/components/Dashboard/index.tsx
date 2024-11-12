@@ -1,5 +1,24 @@
 import styles from './index.module.scss';
 import ReplyAllIcon from '@mui/icons-material/ReplyAll';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts';
+import { VariableLevelData } from '@/lib/data';
+
+const sampleLineData: VariableLevelData['data'] = Array.from(
+  { length: 15 },
+  (_, i) => ({
+    name: Math.round((i + 1) * 1.4 * 100) / 100,
+    frequency: Math.round(Math.random() * 100),
+  }),
+);
 
 import { useAppSelector, useAppDispatch } from '@/lib/hooks';
 import { useRouter } from 'next/navigation';
@@ -114,7 +133,43 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <figure>
-                    <div>Graph</div>
+                    {/* <<div>Graph</div>> */}
+                    <ResponsiveContainer width="100%" height="100%">
+                      <LineChart
+                        width={500}
+                        height={300}
+                        data={sampleLineData}
+                        margin={{
+                          top: 5,
+                          right: 30,
+                          left: 20,
+                          bottom: 5,
+                        }}
+                      >
+                        <CartesianGrid stroke="#DFF2EE" />
+                        <XAxis
+                          dataKey="name"
+                          tick={{ fill: '#DFF2EE' }}
+                          stroke="#DFF2EE"
+                        />
+                        <YAxis tick={{ fill: '#DFF2EE' }} stroke="#DFF2EE" />
+                        <Tooltip
+                          contentStyle={{
+                            backgroundColor: '#2F4858',
+                            color: '#DFF2EE',
+                            fontWeight: 700,
+                          }}
+                        />
+                        <Legend />
+                        <Line
+                          type="monotone"
+                          dataKey="frequency"
+                          stroke="#F6F7C4"
+                          strokeWidth={1.5}
+                          dot={false}
+                        />
+                      </LineChart>
+                    </ResponsiveContainer>
                     <figcaption>
                       {/* A11Y 고려한 숨김 처리 */}
                       Before - 과업 완료 시간의 빈도 그래프
